@@ -1,1 +1,105 @@
-<p style="width: 200px;height: 50px;background-color: azure;display: block;margin: 50px;border: 10px;padding: 10px;">你好，你是谁？</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: #eee;
+      }
+      .flex {
+        display: flex;
+      }
+      .baise {
+        background-color: white;
+      }
+      .shad:hover {
+        box-shadow: 0px 5px 5px #c8c8c8;
+      }
+      .flex1 {
+        flex: 1;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .mg8 {
+        margin: 8px;
+      }
+      .mgr8 {
+        margin-right: 8px;
+      }
+      .mgt8 {
+        margin-top: 8px;
+      }
+      .lead {
+        height: 50px;
+        border-bottom: 2px solid#999;
+      }
+      /* 当手机浏览时需要改变的css */
+      @media (max-width: 600px) {
+        .sidebar {
+          display: none;
+        }
+        .content {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body class="flex">
+    <!--sidebar-->
+    <div style="width: 200px" class="baise shad sidebar">
+      <!--logo-->
+      <div
+        style="justify-content: center; border-bottom: 4px solid #999"
+        class="flex"
+      >
+        <img src="sushi.jpg" style="height: 100px; padding: 10px" />
+      </div>
+      <!--lead-->
+      <div class="lead"></div>
+      <div class="lead"></div>
+      <div class="lead"></div>
+      <div class="lead"></div>
+    </div>
+    <!--main-->
+    <div class="flex1 column flex">
+      <!--head-->
+      <div style="height: 60px; z-index: 1" class="baise shad mg8"></div>
+      <!--content-->
+      <div style="overflow: auto" class="flex1 flex content">
+        <!--left-->
+        <div style="flex: 3" class="flex column mg8">
+          <!--data-->
+          <div class="flex content">
+            <div style="height: 80px" class="flex1 baise shad mgr8"></div>
+            <div style="height: 80px" class="flex1 baise shad mgr8"></div>
+            <div style="height: 80px" class="flex1 baise shad mgr8"></div>
+            <div style="height: 80px" class="flex1 baise shad"></div>
+          </div>
+          <!--column-->
+          <div class="flex column">
+            <div style="height: 100px" class="baise shad mgt8"></div>
+            <div style="height: 100px" class="baise shad mgt8"></div>
+            <div style="height: 100px" class="baise shad mgt8"></div>
+            <div style="height: 100px" class="baise shad mgt8"></div>
+            <div style="height: 100px" class="baise shad mgt8"></div>
+            <div style="height: 100px" class="baise shad mgt8"></div>
+            <div style="height: 100px" class="baise shad mgt8"></div>
+          </div>
+        </div>
+        <!--right-->
+        <div style="flex: 1; overflow: auto" class="flex column">
+          <!--tip-->
+          <div style="height: 150px" class="baise shad mgt8"></div>
+          <!--news-->
+          <div style="height: 300px" class="baise shad mgt8"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
